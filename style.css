@@ -1,0 +1,352 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    --black: #1F2A35;
+    --white: #fff;
+    --blue: #269BBB;
+    --yellow: #EBB717;
+    --red: #f00;
+    --green: #4E9131;
+    --dark-green: #176B5D;
+    --light-green: #6EDBC9;
+    --cyan: #38D3B9;
+
+    font-family: 'Poppins', sans-serif;
+}
+[blue] {
+    color: var(--blue);
+}
+[yellow] {
+    color: var(--yellow);
+}
+[green] {
+    color: var(--green);
+}
+[bg-dark] {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+/* pseudo-adaptive (there's no mobile layout in the design atm) */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
+    color: var(--white);
+    font-size: 0.5em;
+    overflow-x: hidden;
+}
+@media only screen and (min-width: 500px) {
+    body {
+        font-size: 0.75em;
+    }
+}
+@media only screen and (min-width: 900px) {
+    body {
+        font-size: 1em;
+    }
+}
+
+
+/* common components */
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+}
+h2 {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+a {
+    font-weight: bold;
+    color: var(--white);
+    text-decoration: none;
+}
+
+button {
+    border: 1px solid var(--white);
+    background: none;
+    color: var(--white);
+    padding: 0.6em 3em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+button:hover {
+    filter: brightness(80%);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[relative] {
+    position: relative;
+}
+
+[hiz] {
+    z-index: 5;
+}
+
+hr {
+    width: 60%;
+}
+
+
+
+
+/* header section */
+header {
+    height: 5em;
+    display: flex;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    justify-content: space-between;
+    position: fixed;
+    background: var(--black);
+    z-index: 500;
+}
+#under-header {
+    height: 5em;
+}
+header > * {
+    height: 100%;
+    width: 50%;
+}
+header > div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+header > div > img {
+    height: 100%;
+}
+header a {
+    font-size: 1.1em;
+    margin: 0.8em;
+}
+
+
+
+
+/* content sections */
+section {
+    margin: 3em 5em;
+}
+section.less-margins {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+@media only screen and (min-width: 1300px) {
+    section {
+        margin: 5em 20em;
+    }
+}
+section.green {
+    background: linear-gradient(to right, var(--dark-green), var(--cyan));
+    padding: 2em;
+    border-radius: 0.6em;
+    overflow: hidden;
+}
+section.rounded {
+    padding: 2em;
+    border-radius: 0.6em;
+    overflow: hidden;
+}
+
+.columns-2 {
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    gap: 5%;
+}
+.columns-2 > div > img {
+    width: 100%;
+}
+.columns-3 {
+    display: grid;
+    grid-template-columns: 31% 31% 31%;
+    gap: 3.5%;
+}
+
+.centre {
+    text-align: center;
+}
+
+.card {
+    padding: 1.5em;
+    border-radius: 0.6em;
+    min-height: 20em;
+    font-size: 0.9em;
+}
+.card-img {
+    height: 8em;
+    border-radius: 0.4em;
+    padding: 1em;
+    box-sizing: border-box;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+    text-align: center;
+}
+.card-img img {
+    height: 100%;
+    width: auto;
+}
+
+.cta-bottom {
+    padding: 7em 0;
+    position: relative;
+    margin-bottom: 7em;
+}
+.cta-bottom > * {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* footer section */
+footer > div:first-child {
+    height: 4em;
+}
+footer > div:first-child > img {
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+footer > div:last-child {
+    display: grid;
+    margin: 1em 5em;
+    grid-template-columns: 30% 30% 30%;
+    gap: 5%;
+    opacity: 60%;
+    font-size: 0.8em;
+}
+@media only screen and (min-width: 1300px) {
+    footer > div:last-child {
+        margin: 1em 20em;
+    }
+}
+footer > div:last-child > :nth-child(2) {
+    text-align: center;
+}
+footer > div:last-child > :last-child {
+    text-align: right;
+}
+footer > div:last-child a {
+    margin-right: 1.4em;
+}
+
+
+
+
+/* graphic patterns */
+.white-rects {
+    height: 20em;
+}
+.white-rect {
+    width: 80%;
+    left: 10%;
+    top: 0;
+
+    height: 0;
+    padding-top: 40%;
+    background: var(--white);
+    position: absolute;
+    border-radius: 1em;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+.white-rect.alt-1 {
+    width: 70%;
+    left: 15%;
+    top: 1.5em;
+    filter: brightness(90%);
+}
+.white-rect.alt-2 {
+    width: 60%;
+    left: 20%;
+    top: 2.5em;
+    filter: brightness(80%);
+}
+
+.lines {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.lines > i {
+    transform: rotate(-10deg);
+    background: var(--red);
+
+    width: 9999px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    bottom: -1em;
+    left: -3em;
+    transform-origin: bottom left;
+}
+.lines > i:first-child {
+    transform: rotate(-5deg);
+    background: var(--blue);
+}
+.lines > i:last-child {
+    transform: rotate(-15deg);
+    background: var(--yellow);
+}
+
+.logos {
+    height: 5em;
+    text-align: center;
+}
+.logos > img {
+    height: 100%;
+    filter: brightness(80%);
+    transition: all 0.1s;
+}
+.logos > img:hover {
+    filter: brightness(100%);
+}
+
+.bricks {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    transform: rotate(60deg);
+    filter: blur(7px);
+}
+.bricks > i {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: var(--light-green);
+    width: 8%;
+    height: 8%;
+}
+.bricks > i:nth-child(2) { left: 10%; }
+.bricks > i:nth-child(3) { left: 20%; }
+.bricks > i:nth-child(4) { left: 30%; }
+.bricks > i:nth-child(5) { left: 40%; }
+.bricks > i:nth-child(6) { left: 50%; }
+.bricks > i:nth-child(7) { left: 60%; }
+.bricks > i:nth-child(8) { left: 70%; }
+.bricks > i:nth-child(9) { left: 80%; }
+.bricks > i:nth-child(10) { left: 90%; }
+.bricks > i:nth-child(11) { top: 10%; left: 20%; }
+.bricks > i:nth-child(12) { top: 10%; left: 30%; }
+.bricks > i:nth-child(13) { top: 10%; left: 50%; }
+.bricks > i:nth-child(14) { top: 10%; left: 60%; }
+.bricks > i:nth-child(15) { top: 10%; left: 70%; }
+.bricks > i:nth-child(16) { top: 20%; left: 50%; }
+.bricks > i:nth-child(17) { top: 20%; left: 60%; }
+.bricks > i:nth-child(18) { top: 20%; left: 70%; }
+.bricks > i:nth-child(19) { top: 30%; left: 50%; }
+.bricks > i:nth-child(20) { top: 40%; left: 50%; }
